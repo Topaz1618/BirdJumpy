@@ -1,11 +1,23 @@
-import { _decorator, Component, Node } from 'cc';
+import { _decorator, CCInteger, Component, Node } from 'cc';
 const { ccclass, property } = _decorator;
 
-@ccclass('GameContor')
-export class GameContor extends Component {
-    start() {
+import { Ground } from './Ground';
 
-    }
+@ccclass('GameCtrl')
+export class GameCtrl extends Component {
+    
+    @property({
+        type: Ground,
+        tooltip: 'this is ground',
+    })
+    public ground: Ground;
+
+
+    @property({
+        type: CCInteger,
+    })
+    public speed: number = 300;
+
 
     update(deltaTime: number) {
         
